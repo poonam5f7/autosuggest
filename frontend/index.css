@@ -20,3 +20,15 @@ h1 {
 #p2 {
         color: rgb(194, 81, 81);
     }
+#nav{
+    text-align: center;
+    background-color: violet;
+    height:25px;
+    padding-top:6px;
+    margin-bottom: 5px;
+}
+#nav{
+    margin: 0px, 5px;
+    text-decoration: none;
+    color:pink;
+}
