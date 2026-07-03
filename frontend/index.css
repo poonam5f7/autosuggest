@@ -1,3 +1,22 @@
 h1 {
     color: red;
 }
+/*#home-card{
+    background-color: rgb(47, 227, 244);
+}*/
+#home-card{
+    text-align: center;
+    /*border: 3px;
+    border-color:blue;
+    border-style: solid;*/
+
+    border: 3px solid brown;
+}
+
+#home-card:hover {
+    background-color: rgb(47, 227, 244);
+    color: rgb(255, 255, 255);
+}
+#p2 {
+        color: rgb(194, 81, 81);
+    }
