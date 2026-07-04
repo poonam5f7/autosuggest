@@ -19,6 +19,20 @@
             text-align: center;
             margin-top: 200px;
         }
+        .lens{
+            left: 50px;
+            position: relative;
+        }
+        .search-input{
+            padding: 15px 15px 15px 45px;
+            width: 40%;
+            border-radius: 30px;
+        }
+        #suggestion-box{
+            border: 1px solid rgb(87, 59, 59);
+            width: 45%;
+            margin-left: 30%;
+        }
     </style> 
 </head>
     <style> 
@@ -35,9 +49,15 @@
         <span class="right-bar">&#x2022; online | &#x1F552 -ms</span>
     </div>
     <div class="main-section">
-        <h1>BeingInfinity</h1>
+        <h1><span style="color: purple;">Being</span>Infinity</h1>
         <p> One million phrases. Four algorithms. Prefix Based Auto Suggest</p>
-        <span>&#128269;<input placeholder="Start typing to search phrases"></span>
+        <span>
+            <span class="lens">&#128269;</span>
+            <input class="search-input" placeholder="Start typing to search phrases">
+        </span>
+        <div id="suggestion-box">
+            Suggestion box
+        </div>
     </div>
 </body>
 </html>
