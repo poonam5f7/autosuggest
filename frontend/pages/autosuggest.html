@@ -29,9 +29,15 @@
             border-radius: 30px;
         }
         #suggestion-box{
-            border: 1px solid rgb(87, 59, 59);
+
             width: 45%;
             margin-left: 30%;
+        }
+        #suggestion-item{
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            
         }
     </style> 
 </head>
@@ -53,11 +59,42 @@
         <p> One million phrases. Four algorithms. Prefix Based Auto Suggest</p>
         <span>
             <span class="lens">&#128269;</span>
-            <input class="search-input" placeholder="Start typing to search phrases">
+            <input class="search-input" id="search-input" placeholder="Start typing to search phrases">
         </span>
         <div id="suggestion-box">
-            Suggestion box
+            <!-- Suggestion box -->
         </div>
     </div>
+    <script>
+        var searchInput = document.getElementById("search-input");
+        var SuggestionBox = document.getElementById("suggestion-box");
+        searchInput.addEventListener("input", function() {
+            //1.get user typed text
+            var userInput = searchInput.value;
+            if(userInput.trim()===""){
+                SuggestionBox.innerHTML = "";
+            }
+            else{
+                var url1="https://autosuggest-backend.onrender.com/api/autosuggest?q=";
+                var url3="&algorithm=brute&limit=10&weighted=false";
+                var url = url1 + userInput + url3;
+
+            }
+            //2.make api call to get suggestions
+            fetch(url).then(function(response) {
+                return response.json();
+            }).then(function(data) {
+                console.log(data);
+                var resultsArray = data.results;
+                var htmlResults = "";
+                for (var i = 0; i < resultsArray.length; i++) {
+                    htmlResults += "<div id='suggestion-item'>" + resultsArray[i].text + "</div>";
+                }
+                SuggestionBox.innerHTML = htmlResults;
+
+                //3.display data in html
+            });
+        });
+    </script>
 </body>
 </html>
